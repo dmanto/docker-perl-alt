@@ -1,6 +1,6 @@
 #!/bin/sh
 
-REPO=melopt/perl-alt
+REPO=dmanto/perl-alt
 TAG=latest
 
 docker build --target devel   -t ${REPO}:${TAG}-devel   .

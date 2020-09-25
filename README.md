@@ -19,9 +19,9 @@ smallest possible final image.
 
 ## What's inside? ##
 
-All images are based on Alpine 3.9 and include:
+All images are based on Alpine 3.12.0 and include:
 
-* [perl-5.26.3](https://metacpan.org/release/perl): this is the system
+* [perl-5.30.3](https://metacpan.org/release/perl): this is the system
   perl included with the base Alpine image;
 * [cpanm](https://metacpan.org/release/App-cpanminus);
 * [Carton](https://metacpan.org/release/Carton);

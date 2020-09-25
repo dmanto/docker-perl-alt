@@ -1,8 +1,8 @@
 ## The Runtime version
-FROM alpine:3.9 AS runtime
+FROM alpine:3.12.0 AS runtime
 
-RUN apk --no-cache add curl wget perl make ca-certificates zlib libressl \
-                       zlib expat gnupg libxml2 libxml2-utils jq         \
+RUN apk --no-cache add curl wget perl make ca-certificates zlib openssl  \
+    zlib expat gnupg libxml2 libxml2-utils jq                            \
     && curl -L https://cpanmin.us | perl - App::cpanminus                \
     && cpanm -n -q Carton App::cpm                                       \
     && rm -rf ~/.cpanm                                                   \
@@ -21,7 +21,7 @@ WORKDIR /app
 FROM runtime AS build
 
 RUN apk --no-cache add build-base zlib-dev perl-dev libressl-dev \
-                       expat-dev libxml2-dev perl-test-harness-utils
+    expat-dev libxml2-dev perl-test-harness-utils
 
 
 ## The Devel version
